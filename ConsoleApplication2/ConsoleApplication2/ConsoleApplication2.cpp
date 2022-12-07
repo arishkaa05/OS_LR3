@@ -18,7 +18,7 @@ int main() {
     
     start = clock();
 
-#pragma omp parallel shared(t1) reduction (+:pi) num_threads(threads)
+#pragma omp parallel shared(start) reduction (+:pi) num_threads(threads)
         {
 #pragma omp for schedule(dynamic, blockSize) nowait
             for (int i = 0; i < N; ++i) {
